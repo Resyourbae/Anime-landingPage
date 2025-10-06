@@ -1,20 +1,27 @@
 # 🌸 Anime Landing Page
 
-Sebuah website landing page bertema **anime** yang dibuat menggunakan **Vite + Tailwind CSS + JavaScript**.  
+
+<img src="https://github.com/Resyourbae.png" width="120" style="border-radius:50%" />
+
+Sebuah website landing page bertema **anime** yang dibuat menggunakan **Vite + Tailwind CSS + TypeScript**.  
 Tampilan dibuat modern, interaktif, dan responsif dengan sentuhan elemen 3D ringan.
 
 ---
 
 ## 🖼️ Tampilan Website
 
-<img width="1904" alt="Anime Landing Page Screenshot" src="/screenshots/landing-page.png" />
+<img width="1904" height="1071" alt="image" src="public/screenshots/landing-page.png">
+
+---
+
+<img width="1904" height="1071" alt="image" src="public/screenshots/karakter.png">
 
 ---
 
 ## 🚀 Teknologi yang Digunakan
 - ⚡ Vite
 - 🎨 Tailwind CSS v4.1
-- 💡 JavaScript (tanpa TypeScript)
+- 💡 TypeScript
 - 🌐 Responsive design
 
 ---
