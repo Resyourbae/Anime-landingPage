@@ -24,7 +24,7 @@ export default function Banner() {
       />
 
       {/* Animação do texto */}
-      <h1 className="flex flex-wrap justify-center text-[15rem] md:text-[30rem] h-auto md:h-[60%] font-bold text-white text-shadow-black relative">
+      <h1 className="flex flex-wrap justify-center text-[12rem] sm:text-[15rem] md:text-[18rem] lg:text-[22rem] font-bold text-white text-shadow-black relative w-full h-screen">
         {letters.map((letter, i) => (
           <motion.span
             key={i}
@@ -36,25 +36,26 @@ export default function Banner() {
               type: "spring",
               stiffness: 10,
             }}
+            className="leading-none"
           >
             {letter}
           </motion.span>
         ))}
       </h1>
 
-      <div className="h-full text-amber-50 w-full flex justify-between px-4 md:px-45">
+      <div className="relative h-full text-amber-50 w-full px-4 md:px-12 lg:px-20">
         <motion.div 
-          initial={{ y: -200, opacity: 0, filter: "blur(20px)" }}
-          animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+          initial={{ x: -100, opacity: 0, filter: "blur(20px)" }}
+          animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
           transition={{
             duration: 0.5,
             delay: 0.2,
             type: "spring",
             stiffness: 25,
           }}
-          className="w-full md:w-[600px] text-base md:text-lg h-fit rounded-xl md:rounded-4xl backdrop-blur-md p-4 mx-auto md:mx-0"
+          className="absolute bottom-8 md:bottom-12 left-2 md:left-8 lg:left-16 max-w-[300px] sm:max-w-[400px] md:max-w-[500px] text-sm sm:text-base md:text-lg h-fit rounded-xl backdrop-blur-md bg-black/30 p-4 border border-white/10"
         >
-          <span className="font-bold">Frieren, sang Pemburu</span> adalah mantan
+          <span className="font-bold text-amber-300">Frieren, sang Pemburu</span> adalah mantan
           anggota kelompok petualang yang dipimpin oleh pahlawan Himmel, yang mengalahkan
           Raja Iblis dan mengembalikan kedamaian dunia setelah perjalanan selama sepuluh tahun.
         </motion.div>

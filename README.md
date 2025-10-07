@@ -10,11 +10,16 @@ Tampilan dibuat modern, interaktif, dan responsif dengan sentuhan elemen 3D ring
 
 ## 🖼️ Tampilan Website
 
-<img width="1904" height="1071" alt="image" src="public/screenshots/landing-page.png">
+<img width="1904" height="1071" alt="image" src="public/screenshots/landing-page2.png">
 
 ---
 
 <img width="1904" height="1071" alt="image" src="public/screenshots/karakter.png">
+
+---
+`mobile mode`
+
+<img width="1904" height="1071" alt="image" src="public/screenshots/mobile-mode.png">
 
 ---
 
