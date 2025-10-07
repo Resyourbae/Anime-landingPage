@@ -31,7 +31,7 @@ const ImageModal = ({ src, onClose }: ImageModalProps) => {
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
         transition={{ type: "spring", duration: 0.3 }}
-        className="relative max-w-5xl max-h-[90vh] w-full bg-white/5 rounded-2xl p-2 backdrop-blur-md"
+        className="relative max-w-[95vw] md:max-w-5xl max-h-[90vh] w-full bg-white/5 rounded-2xl p-2 backdrop-blur-md"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -110,7 +110,7 @@ const PhotoRow = ({
   const totalWidth = images.length * imageWidth;
 
   return (
-    <div className="relative w-full h-48 overflow-hidden">
+    <div className="relative w-full h-32 sm:h-40 md:h-48 overflow-hidden">
       <motion.div
         className="flex absolute"
         animate={{
@@ -121,7 +121,7 @@ const PhotoRow = ({
         }}
         transition={{
           repeat: Infinity,
-          duration: 70, // Slower animation
+          duration: 70,
           ease: "linear",
           repeatType: "loop"
         }}
@@ -129,12 +129,12 @@ const PhotoRow = ({
         {repeatedImages.map((src, i) => (
           <div
             key={i}
-            className="flex-shrink-0 px-1" // Reduced padding
+            className="flex-shrink-0 px-1"
           >
             <img
               src={src}
               alt={`Gallery image ${i}`}
-              className="w-64 h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer"
+              className="w-48 sm:w-56 md:w-64 h-32 sm:h-40 md:h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer"
               onClick={() => onImageClick(src)}
             />
           </div>

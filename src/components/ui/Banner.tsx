@@ -12,19 +12,19 @@ export default function Banner() {
       {/* Animação da imagem */}
       <motion.img
         src="frieren.png"
-        className="absolute w-[28%] bottom-0 left-[50%] scale-260 z-1"
+        className="absolute w-[80%] md:w-[28%] bottom-0 left-[50%] -translate-x-1/2 scale-260 z-1"
         initial={{ y: 200, opacity: 0, filter: "blur(20px)" }}
         animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
         transition={{
-          duration: 0.4, // Duração de 1 segundo
-          delay: 1, // Começa com um atraso de 0.5 segundos
+          duration: 0.4,
+          delay: 1,
           type: "spring",
           stiffness: 20,
         }}
       />
 
       {/* Animação do texto */}
-      <h1 className="flex text-[30rem] h-[60%] font-bold text-white text-shadow-black relative">
+      <h1 className="flex flex-wrap justify-center text-[15rem] md:text-[30rem] h-auto md:h-[60%] font-bold text-white text-shadow-black relative">
         {letters.map((letter, i) => (
           <motion.span
             key={i}
@@ -32,7 +32,7 @@ export default function Banner() {
             animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
             transition={{
               duration: 0.5,
-              delay: i * 0.2, // atraso progressivo
+              delay: i * 0.2,
               type: "spring",
               stiffness: 10,
             }}
@@ -42,20 +42,17 @@ export default function Banner() {
         ))}
       </h1>
 
-      
-
-      <div
-       className="h-full text-amber-50 w-full flex justify-between px-45 ">
+      <div className="h-full text-amber-50 w-full flex justify-between px-4 md:px-45">
         <motion.div 
-        initial={{ y: -200, opacity: 0, filter: "blur(20px)" }}
-            animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-            transition={{
-              duration: 0.5,
-              delay:  0.2, // atraso progressivo
-              type: "spring",
-              stiffness: 25,
-            }}
-        className="w-100 text-lg h-fit rounded-4xl backdrop-blur-md p-4"
+          initial={{ y: -200, opacity: 0, filter: "blur(20px)" }}
+          animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            type: "spring",
+            stiffness: 25,
+          }}
+          className="w-full md:w-[600px] text-base md:text-lg h-fit rounded-xl md:rounded-4xl backdrop-blur-md p-4 mx-auto md:mx-0"
         >
           <span className="font-bold">Frieren, sang Pemburu</span> adalah mantan
           anggota kelompok petualang yang dipimpin oleh pahlawan Himmel, yang mengalahkan

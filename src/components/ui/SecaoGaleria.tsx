@@ -6,8 +6,8 @@ export default function SecaoGaleria() {
 
   return (
     <>
-      <div className="w-full h-screen bg-black flex flex-col text-center pt-25">
-        <h2 id="galeria" className="text-amber-50 text-7xl font-bold">
+      <div className="w-full min-h-screen bg-black flex flex-col text-center pt-16 md:pt-25 overflow-hidden">
+        <h2 id="galeria" className="text-amber-50 text-4xl md:text-7xl font-bold">
           {letters.map((letter, i) => (
             <motion.span
               key={i}

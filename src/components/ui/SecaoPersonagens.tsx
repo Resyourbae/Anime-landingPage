@@ -5,8 +5,8 @@ export default function SecaoPersonagens() {
     const letters = "Karakter".split("");
 
   return(<>
-  <div className="bg-black gap-5 justify-center py-10">
-    <h2 id="personagens" className="text-amber-50 text-7xl font-bold text-center">
+  <div className="bg-black gap-5 justify-center py-10 overflow-x-hidden">
+    <h2 id="personagens" className="text-amber-50 text-4xl md:text-7xl font-bold text-center">
           {letters.map((letter, i) => (
             <motion.span
               key={i}
@@ -14,7 +14,7 @@ export default function SecaoPersonagens() {
               whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
               transition={{
                 duration: 0.1,
-                delay: i * 0.1, // atraso progressivo
+                delay: i * 0.1,
                 type: "spring",
                 stiffness: 20,
               }}
@@ -25,54 +25,50 @@ export default function SecaoPersonagens() {
           ))}
     </h2>
 
-    <div className="flex flex-col gap-8 justify-center py-20">
-      {/* Baris Pertama */}
-      <div className="flex gap-6 justify-center">
+    <div className="flex flex-col gap-6 justify-center py-10 md:py-20">
+      {/* Container for all cards with responsive grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 px-2 sm:px-4 md:px-8 max-w-7xl mx-auto">
         <CardPersonagem
           nome="Tamamo"
-          descricao="Kuda balap legendaris dengan kecepatan luar biasa dan semangat pantang menyerah."
+          descricao="Kuda balap legendaris dengan kecepatan luar biasa."
           imagem="/tamamo.png"
-          tags={["Kuda", "Pelari", "Legendaris"]}
+          tags={["Kuda", "Pelari"]}
         />
         <CardPersonagem
           nome="My bini"
-          descricao="Versi musim panas yang ceria dan energik, selalu siap untuk pertandingan baru."
+          descricao="Versi musim panas yang ceria dan energik."
           imagem="/mybini.png"
-          tags={["Kuda", "Energik", "Bersemangat"]}
+          tags={["Kuda", "Energik"]}
         />
         <CardPersonagem
           nome="Gold ship"
-          descricao="Sosok misterius dengan aura yang kuat, menjadi inspirasi bagi para pelari muda."
+          descricao="Sosok misterius dengan aura yang kuat."
           imagem="/goldship.png"
-          tags={["Kuda", "Misterius", "Kuat"]}
+          tags={["Kuda", "Misterius"]}
         />
-      </div>
-      
-      {/* Baris Kedua */}
-      <div className="flex gap-6 justify-center">
         <CardPersonagem
           nome="Mamah aku takut"
-          descricao="Juara lintas rintangan yang terkenal dengan keanggunan dan ketangguhannya."
+          descricao="Juara lintas rintangan yang terkenal."
           imagem="/takut.png"
-          tags={["Kuda", "Anggun", "Tangguh"]}
+          tags={["Kuda", "Anggun"]}
         />
         <CardPersonagem
           nome="Alice"
-          descricao="Karakter yang penuh semangat dan ceria dengan senyuman yang menawan."
+          descricao="Karakter yang penuh semangat dan ceria."
           imagem="/alice1.jpg"
-          tags={["Enerjik", "Ceria", "Ramah"]}
+          tags={["Enerjik", "Ceria"]}
         />
         <CardPersonagem
-          nome="Proplayer "
-          descricao="Sosok asli yang melegenda, dengan prestasi dan pencapaian yang menginspirasi."
+          nome="Proplayer"
+          descricao="Sosok asli yang melegenda dan menginspirasi."
           imagem="/proplayer.png"
-          tags={["Kuda", "Legenda", "Inspiratif"]}
+          tags={["Kuda", "Legenda"]}
         />
       </div>
     </div>
 
     {/* Section Statistik & Pencapaian */}
-    <div id="stats" className="mt-20 px-4 mb-10">
+    <div id="stats" className="mt-10 md:mt-20 px-4 mb-10">
       <div className="max-w-6xl mx-auto">
         {/* Grid Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -305,73 +301,97 @@ export default function SecaoPersonagens() {
                 <h3 className="text-2xl font-light text-white">
                   Join Our <span className="text-amber-300">Community</span>
                 </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <motion.a
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
-                  >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-amber-300/10">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                      </svg>
-                    </div>
-                    <span className="text-white/90 text-sm">Instagram</span>
-                  </motion.a>
+                <div className="flex flex-col gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {/* Instagram */}
+                    <motion.a
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group flex items-center gap-4 p-4 rounded-xl bg-black/40 hover:bg-black/60 border border-white/10 transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-400/20 to-purple-600/20 group-hover:from-amber-400/30 group-hover:to-purple-600/30 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-white font-medium">Instagram</span>
+                        <span className="text-white/60 text-sm">@ayser_nii</span>
+                      </div>
+                    </motion.a>
 
-                  <motion.a
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
-                  >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-amber-300/10">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-amber-300" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                      </svg>
-                    </div>
-                    <span className="text-white/90 text-sm">TikTok</span>
-                  </motion.a>
+                    {/* TikTok */}
+                    <motion.a
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group flex items-center gap-4 p-4 rounded-xl bg-black/40 hover:bg-black/60 border border-white/10 transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-400/20 to-purple-600/20 group-hover:from-amber-400/30 group-hover:to-purple-600/30 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-amber-300" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-white font-medium">TikTok</span>
+                        <span className="text-white/60 text-sm">@ayser_nii</span>
+                      </div>
+                    </motion.a>
 
-                  <motion.a
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
-                  >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-amber-300/10">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-amber-300" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                      </svg>
-                    </div>
-                    <span className="text-white/90 text-sm">Telegram</span>
-                  </motion.a>
+                    {/* Telegram */}
+                    <motion.a
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group flex items-center gap-4 p-4 rounded-xl bg-black/40 hover:bg-black/60 border border-white/10 transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-400/20 to-purple-600/20 group-hover:from-amber-400/30 group-hover:to-purple-600/30 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-amber-300" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                        </svg>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-white font-medium">Telegram</span>
+                        <span className="text-white/60 text-sm">@ayser_nii</span>
+                      </div>
+                    </motion.a>
+                  </div>
 
-                  <motion.a
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
-                  >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-amber-300/10">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                      </svg>
-                    </div>
-                    <span className="text-white/90 text-sm">WhatsApp</span>
-                  </motion.a>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* WhatsApp */}
+                    <motion.a
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group flex items-center gap-4 p-4 rounded-xl bg-black/40 hover:bg-black/60 border border-white/10 transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-400/20 to-purple-600/20 group-hover:from-amber-400/30 group-hover:to-purple-600/30 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-white font-medium">WhatsApp</span>
+                        <span className="text-white/60 text-sm">Community Group</span>
+                      </div>
+                    </motion.a>
 
-                  <motion.a
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="flex items-center gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors col-span-2"
-                  >
-                    <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-amber-300/10">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-amber-300" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/>
-                      </svg>
-                    </div>
-                    <span className="text-white/90 text-sm">Discord</span>
-                  </motion.a>
+                    {/* Discord */}
+                    <motion.a
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group flex items-center gap-4 p-4 rounded-xl bg-black/40 hover:bg-black/60 border border-white/10 transition-all duration-300"
+                    >
+                      <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-amber-400/20 to-purple-600/20 group-hover:from-amber-400/30 group-hover:to-purple-600/30 transition-all duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-amber-300" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026c.462-.62.874-1.275 1.226-1.963.021-.04.001-.088-.041-.104a13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028z"/>
+                        </svg>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-white font-medium">Discord</span>
+                        <span className="text-white/60 text-sm">Join our server</span>
+                      </div>
+                    </motion.a>
+                  </div>
                 </div>
 
                 {/* Additional Community Features */}

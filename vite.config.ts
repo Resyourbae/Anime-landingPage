@@ -5,7 +5,8 @@ import path from "path"
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), 
+  plugins: [
+    react(),
     tailwindcss()
   ],
   resolve: {
@@ -13,4 +14,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    allowedHosts: [
+      'localhost',
+      '127.0.0.1:4040',
+      '8b5b6cb5fc05.ngrok-free.app' // 🔥 ganti sesuai URL ngrok kamu
+      // Atau gunakan 'all' kalau nggak mau ganti tiap kali restart ngrok:
+      // 'all'
+    ]
+  }
 })
